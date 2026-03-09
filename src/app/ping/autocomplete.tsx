@@ -25,7 +25,7 @@ export default function Autocomplete() {
       try {
         const res = await fetch('/api/autocomplete', {
           method: 'POST',
-          body: JSON.stringify({ query: search }),
+          body: JSON.stringify({ query: search, limit: 50 }),
         })
 
         if (!res.ok) throw new Error(res.statusText)
